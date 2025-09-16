@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            color:#00FF00;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-color:black;
+        }
+
+
+        .header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header {
+            justify-items: center;
+            align-content: center;
+        }
+        table{
+            width:100%;
+        }
+    </style>
+    <title>Attendance Check</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="heading">Students Attendance Tracker</h1>
+    </div>
+    <div class="stuinfo">
+        <div class="screen">
+<div id="hoverDisplay" style="
+    position: fixed;
+    top: 00px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111;
+    padding: 20px 30px;
+    font-size: 1rem;
+    color: #00FF00;
+    z-index: 1000;
+    border: 3px solid #00FF00;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 60%;
+    max-width: 80%;
+"></div>
+
+</div>
+
+<div style="margin-bottom: 10px;">
+    <button onclick="markAllPresent()">Present All</button>
+    <button onclick="clearAll()">Clear All</button>
+    <button onclick="countAttendance()">Count Attendance</button>
+   
+</div>
+
+
+        <table border="1" class="table">
+            <tr>
+                <td> 101 - Jiya Kyada</td>
+                <td><input type="checkbox" name="attendance_101_present"> Present</td>
+                <td><input type="checkbox" name="attendance_101_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 102 - Shah Dhvani Hitesh
+                </td>
+                <td><input type="checkbox" name="attendance_102_present"> Present</td>
+                <td><input type="checkbox" name="attendance_102_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 103 - Saraya Mohit Haresh
+                </td>
+                <td><input type="checkbox" name="attendance_103_present"> Present</td>
+                <td><input type="checkbox" name="attendance_103_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 104 - Zalavadiya Heet Siddharth
+                </td>
+                <td><input type="checkbox" name="attendance_104_present"> Present</td>
+                <td><input type="checkbox" name="attendance_104_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 105 - Darshil Dobariya
+                </td>
+                <td><input type="checkbox" name="attendance_105_present"> Present</td>
+                <td><input type="checkbox" name="attendance_105_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 106 - Nafisa Gandhi
+                </td>
+                <td><input type="checkbox" name="attendance_106_present"> Present
+                </td>
+                <td><input type="checkbox" name="attendance_106_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 107 - Vasani Yashvi Niteshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_107_present"> Present</td>
+                <td><input type="checkbox" name="attendance_107_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 108 - Delvadiya Manavkumar Kirtibhai</td>
+                <td><input type="checkbox" name="attendance_108_present"> Present</td>
+                <td><input type="checkbox" name="attendance_108_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 109 - Ashara Palak Gopalbhai
+                </td>
+                <td><input type="checkbox" name="attendance_109_present"> Present</td>
+                <td><input type="checkbox" name="attendance_109_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 110 - Lunagariya Greshi Kamleshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_110_present"> Present</td>
+                <td><input type="checkbox" name="attendance_110_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 111 - Nanavati Shrushti Gargesh
+                </td>
+                <td><input type="checkbox" name="attendance_111_present"> Present</td>
+                <td><input type="checkbox" name="attendance_111_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 112 - Ranpara Jay Manishbhai
+                </td>
+                <td><input type="checkbox" name="attendance_112_present"> Present</td>
+                <td><input type="checkbox" name="attendance_112_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 113 - Disha Mehta
+                </td>
+                <td><input type="checkbox" name="attendance_113_present"> Present
+                </td>
+                <td><input type="checkbox" name="attendance_113_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 114 - Thummar Niraj Bhaveshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_114_present"> Present</td>
+                <td><input type="checkbox" name="attendance_114_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 115 - Kachhava Nakul Umeshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_115_present"> Present</td>
+                <td><input type="checkbox" name="attendance_115_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 116 - Kanabar Urva Darshanbhai
+                </td>
+                <td><input type="checkbox" name="attendance_116_present"> Present</td>
+                <td><input type="checkbox" name="attendance_116_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 117 - Nakar Dhruvil Hitesh
+                </td>
+                <td><input type="checkbox" name="attendance_117_present"> Present</td>
+                <td><input type="checkbox" name="attendance_117_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 118 - Poshiya Priyanshi Ajaybhai
+                </td>
+                <td><input type="checkbox" name="attendance_118_present"> Present</td>
+                <td><input type="checkbox" name="attendance_118_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 119 - Baravatra Dharitdi Manharbhai
+                </td>
+                <td><input type="checkbox" name="attendance_119_present"> Present</td>
+                <td><input type="checkbox" name="attendance_119_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 120 - Muchhara Kashish Hiteshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_120_present"> Present</td>
+                <td><input type="checkbox" name="attendance_120_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 121 - Chauhan Aditya Sureshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_121_present"> Present</td>
+                <td><input type="checkbox" name="attendance_121_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 122 - Harsora Sakshi Ajaybhai
+                </td>
+                <td><input type="checkbox" name="attendance_122_present"> Present</td>
+                <td><input type="checkbox" name="attendance_122_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 123 - Katdodiya Sahil Rajeshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_123_present"> Present</td>
+                <td><input type="checkbox" name="attendance_123_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 124 - Tdambadiya Parikshit Parimalbh</td>
+                <td><input type="checkbox" name="attendance_124_present"> Present</td>
+                <td><input type="checkbox" name="attendance_124_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 125 - Padariya Preya Parasbhai
+                </td>
+                <td><input type="checkbox" name="attendance_125_present"> Present</td>
+                <td><input type="checkbox" name="attendance_125_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 126 - Gambhava Krushiben Manojbhai
+                </td>
+                <td><input type="checkbox" name="attendance_126_present"> Present</td>
+                <td><input type="checkbox" name="attendance_126_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 127 - Jadeja Vishwrajsinh Krushnasin
+
+                </td>
+                <td><input type="checkbox" name="attendance_127_present"> Present</td>
+                <td><input type="checkbox" name="attendance_127_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 128 - Patel Jiya Sandipbhai
+                </td>
+                <td><input type="checkbox" name="attendance_128_present"> Present</td>
+                <td><input type="checkbox" name="attendance_128_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 129 - Pipalava Smit Ashvinbhai
+                </td>
+                <td><input type="checkbox" name="attendance_129_present"> Present</td>
+                <td><input type="checkbox" name="attendance_129_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 130 - Gohil Harshrajsinh Jitendrasin</td>
+                <td><input type="checkbox" name="attendance_130_present"> Present</td>
+                <td><input type="checkbox" name="attendance_130_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 131 - Kathiriya Arshi Keshubhai
+                </td>
+                <td><input type="checkbox" name="attendance_131_present"> Present</td>
+                <td><input type="checkbox" name="attendance_131_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 132 - Undhad Vishwa Rajesh
+                </td>
+                <td><input type="checkbox" name="attendance_132_present"> Present</td>
+                <td><input type="checkbox" name="attendance_132_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 133 - Diya Raiyani
+                </td>
+                <td><input type="checkbox" name="attendance_133_present"> Present</td>
+                <td><input type="checkbox" name="attendance_133_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 134 - Chavda Mautrk Vinodbhai
+                </td>
+                <td><input type="checkbox" name="attendance_134_present"> Present</td>
+                <td><input type="checkbox" name="attendance_134_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 135 - Chavda Priyanka Prabodhbhai
+                </td>
+                <td><input type="checkbox" name="attendance_135_present"> Present</td>
+                <td><input type="checkbox" name="attendance_135_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 136 - Chavda Virendrasinh Ashwinbha</td>
+                <td><input type="checkbox" name="attendance_136_present"> Present</td>
+                <td><input type="checkbox" name="attendance_136_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 137 - Galani Krunal Chetanbhai
+                </td>
+                <td><input type="checkbox" name="attendance_137_present"> Present</td>
+                <td><input type="checkbox" name="attendance_137_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 138 - Kavar Suchi Vasantbhai
+                </td>
+                <td><input type="checkbox" name="attendance_138_present"> Present</td>
+                <td><input type="checkbox" name="attendance_138_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 139 - Odedara Nilesh Parbat
+                </td>
+                <td><input type="checkbox" name="attendance_139_present"> Present</td>
+                <td><input type="checkbox" name="attendance_139_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 140 - Vasani Dishita Nikhilkumar
+                </td>
+                <td><input type="checkbox" name="attendance_140_present"> Present</td>
+                <td><input type="checkbox" name="attendance_140_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 141 - Vachhani Vaishvi Manojkumar
+                </td>
+                <td><input type="checkbox" name="attendance_141_present"> Present</td>
+                <td><input type="checkbox" name="attendance_141_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 142 - Bhadania Ronit Yatinbhai
+                </td>
+                <td><input type="checkbox" name="attendance_142_present"> Present</td>
+                <td><input type="checkbox" name="attendance_142_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 143 - Chauhan Jenil Virenbhai
+                </td>
+                <td><input type="checkbox" name="attendance_143_present"> Present</td>
+                <td><input type="checkbox" name="attendance_143_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 144 - Virpara Krisha Rajeshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_144_present"> Present</td>
+                <td><input type="checkbox" name="attendance_144_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 145 - Chandra Darshit Hiteshbhai
+                </td>
+                <td><input type="checkbox" name="attendance_145_present"> Present</td>
+                <td><input type="checkbox" name="attendance_145_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 146 - Detdoja Ruchit Arvindbhai
+                </td>
+                <td><input type="checkbox" name="attendance_146_present"> Present</td>
+                <td><input type="checkbox" name="attendance_146_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 147 - Kapuriya Hepin Pravinbhai
+                </td>
+                <td><input type="checkbox" name="attendance_147_present"> Present</td>
+                <td><input type="checkbox" name="attendance_147_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 148 - Gohel Smit Ashvinbhai
+                </td>
+                <td><input type="checkbox" name="attendance_148_present"> Present</td>
+                <td><input type="checkbox" name="attendance_148_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 149 - Patel Kirtan Amitbhai
+                </td>
+                <td><input type="checkbox" name="attendance_149_present"> Present</td>
+                <td><input type="checkbox" name="attendance_149_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 150 - Ginoya Deep Kantilal
+                </td>
+                <td><input type="checkbox" name="attendance_150_present"> Present</td>
+                <td><input type="checkbox" name="attendance_150_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 151 – Marvaniya Jainish Dharmendrabhai</td>
+                <td><input type="checkbox" name="roll151_present"> Present</td>
+                <td><input type="checkbox" name="roll151_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 152 – Ajudiya Yash Nareshbhai
+                </td>
+                <td><input type="checkbox" name="roll152_present"> Present</td>
+                <td><input type="checkbox" name="roll152_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 153 – Manas Borisagar
+                </td>
+                <td><input type="checkbox" name="roll153_present"> Present</td>
+                <td><input type="checkbox" name="roll153_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 154 – Joshi Soham Kamleshbhai
+                </td>
+                <td><input type="checkbox" name="roll154_present"> Present</td>
+                <td><input type="checkbox" name="roll154_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 155 – Kakadiya Khilan Manishbhai
+                </td>
+                <td><input type="checkbox" name="roll155_present"> Present</td>
+                <td><input type="checkbox" name="roll155_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 156 – Sidhdhapura Dhaval Dharmeshbhai
+                </td>
+                <td><input type="checkbox" name="roll156_present"> Present</td>
+                <td><input type="checkbox" name="roll156_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 157 – Sitapara Aryan Sunilbhai
+                </td>
+                <td><input type="checkbox" name="roll157_present"> Present</td>
+                <td><input type="checkbox" name="roll157_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 158 – Bhatasana Nainshi Pareshbhai
+                </td>
+                <td><input type="checkbox" name="roll158_present"> Present</td>
+                <td><input type="checkbox" name="roll158_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 159 – Malvaniya Viraj Jatinbhai
+                </td>
+                <td><input type="checkbox" name="roll159_present"> Present</td>
+                <td><input type="checkbox" name="roll159_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 160 – Tanisha Pambhar
+                </td>
+                <td><input type="checkbox" name="roll160_present"> Present</td>
+                <td><input type="checkbox" name="roll160_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 161 – Padshala Kuldeep Rajendrakumar
+                </td>
+                <td><input type="checkbox" name="roll161_present"> Present</td>
+                <td><input type="checkbox" name="roll161_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 162 – Bhimani Vishva Manishbhai
+                </td>
+                <td><input type="checkbox" name="roll162_present"> Present</td>
+                <td><input type="checkbox" name="roll162_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 163 – Karan Anushka Pintubhai
+                </td>
+                <td><input type="checkbox" name="roll163_present"> Present</td>
+                <td><input type="checkbox" name="roll163_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 164 – Vyas Kavya Sachin
+                </td>
+                <td><input type="checkbox" name="roll164_present"> Present</td>
+                <td><input type="checkbox" name="roll164_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 165 – Kamani Purna Hareshbhai
+                </td>
+                <td><input type="checkbox" name="roll165_present"> Present</td>
+                <td><input type="checkbox" name="roll165_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 166 – Mori Nandita Renishkumar
+                </td>
+                <td><input type="checkbox" name="roll166_present"> Present</td>
+                <td><input type="checkbox" name="roll166_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 167 – Ratanghayra Pankti Himanshu
+                </td>
+                <td><input type="checkbox" name="roll167_present"> Present</td>
+                <td><input type="checkbox" name="roll167_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 168 – Rupala Nikhil Kashmeeraben
+                </td>
+                <td><input type="checkbox" name="roll168_present"> Present</td>
+                <td><input type="checkbox" name="roll168_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 169 – Jadeja Shivrajsinh Girirajsinh
+                </td>
+                <td><input type="checkbox" name="roll169_present"> Present</td>
+                <td><input type="checkbox" name="roll169_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 170 – Hirva Satani
+                    </td>
+                    <td><input type="checkbox" name="roll170_present"> Present</td>
+                <td><input type="checkbox" name="roll170_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 171 – Raiyani Jenil Sanjaybhai
+                </td>
+                <td><input type="checkbox" name="roll171_present"> Present</td>
+                <td><input type="checkbox" name="roll171_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 172 – Chandpa Prince Sureshbhai
+                </td>
+                <td><input type="checkbox" name="roll172_present"> Present</td>
+                <td><input type="checkbox" name="roll172_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 173 – Faldu Vrajesh Sanjaybhai
+                </td>
+                <td><input type="checkbox" name="roll173_present"> Present</td>
+                <td><input type="checkbox" name="roll173_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 174 – Khambhotrya Manya Parasharbhai
+                </td>
+                <td><input type="checkbox" name="roll174_present"> Present</td>
+                <td><input type="checkbox" name="roll174_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 175 – Prajapati Kaivalya Samir
+                </td>
+                <td><input type="checkbox" name="roll175_present"> Present</td>
+                <td><input type="checkbox" name="roll175_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 176 – Moral Aadit Shaileshbhai
+                </td>
+                <td><input type="checkbox" name="roll176_present"> Present</td>
+                <td><input type="checkbox" name="roll176_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 177 – Shihora Vibhu Chetanbhai
+                </td>
+                <td><input type="checkbox" name="roll177_present"> Present</td>
+                <td><input type="checkbox" name="roll177_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 178 – Kanani Kruti Jayeshbhai
+                </td>
+                <td><input type="checkbox" name="roll178_present"> Present</td>
+                <td><input type="checkbox" name="roll178_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 179 – Karotrya Princekumar Sandipbhai
+                </td>
+                <td><input type="checkbox" name="roll179_present"> Present</td>
+                <td><input type="checkbox" name="roll179_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 180 – Khunt Rutvi Hiteshbhai
+                </td>
+                <td><input type="checkbox" name="roll180_present"> Present</td>
+                <td><input type="checkbox" name="roll180_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 181 – Charadva Abhishek Virenbhai
+                </td>
+                <td><input type="checkbox" name="roll181_present"> Present</td>
+                <td><input type="checkbox" name="roll181_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 182 – Dave Krisha Kalpeshbhai
+                </td>
+                <td><input type="checkbox" name="roll182_present"> Present</td>
+                <td><input type="checkbox" name="roll182_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 183 – Janvi Kalaria
+                </td>
+                <td><input type="checkbox" name="roll183_present"> Present
+                </td>
+                <td><input type="checkbox" name="roll183_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 184 – Rajwani Rohan Matrk
+                </td>
+                <td><input type="checkbox" name="roll184_present"> Present</td>
+                <td><input type="checkbox" name="roll184_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 185 – Rana Parthrajsinh Bhupatsinh
+                </td>
+                <td><input type="checkbox" name="roll185_present"> Present</td>
+                <td><input type="checkbox" name="roll185_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 186 – Solanki Ronak Arvindbhai
+                </td>
+                <td><input type="checkbox" name="roll186_present"> Present</td>
+                <td><input type="checkbox" name="roll186_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 187 – Panchal Vedantkumar Niravbhai
+                </td>
+                <td><input type="checkbox" name="roll187_present"> Present</td>
+                <td><input type="checkbox" name="roll187_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 188 – Ambasana Venisha Hitenbhai
+                </td>
+                <td><input type="checkbox" name="roll188_present"> Present</td>
+                <td><input type="checkbox" name="roll188_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 189 – Raichura Smeet Rohitkumar
+                </td>
+                <td><input type="checkbox" name="roll189_present"> Present</td>
+                <td><input type="checkbox" name="roll189_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 190 – Gambhava Miratr Sureshbhai
+                </td>
+                <td><input type="checkbox" name="roll190_present"> Present</td>
+                <td><input type="checkbox" name="roll190_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 191 – Dave Dhruv Viralkumar
+                </td>
+                <td><input type="checkbox" name="roll191_present"> Present</td>
+                <td><input type="checkbox" name="roll191_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 192 – Ghetiya Ritu Pankajbhai
+                </td>
+                <td><input type="checkbox" name="roll192_present"> Present</td>
+                <td><input type="checkbox" name="roll192_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 193 – Radhanpara Saumya Jatinbhai
+                </td>
+                <td><input type="checkbox" name="roll193_present"> Present</td>
+                <td><input type="checkbox" name="roll193_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 194 – Yadav Gaurav Kaushikbhai
+                </td>
+                <td><input type="checkbox" name="roll194_present"> Present</td>
+                <td><input type="checkbox" name="roll194_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 195 – Buddhadev Misri Sanjaybhai
+                </td>
+                <td><input type="checkbox" name="roll195_present"> Present</td>
+                <td><input type="checkbox" name="roll195_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 196 – Joshi Kairav Paren
+                </td>
+                <td><input type="checkbox" name="roll196_present"> Present</td>
+                <td><input type="checkbox" name="roll196_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 197 – Savatrya Dhruvi Bharatbhai
+                </td>
+                <td><input type="checkbox" name="roll197_present"> Present</td>
+                <td><input type="checkbox" name="roll197_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 198 – Radhanpura Jeel Nimish
+                </td>
+                <td><input type="checkbox" name="roll198_present"> Present</td>
+                <td><input type="checkbox" name="roll198_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 199 – Savatrya Priyanshi Sureshbhai
+                </td>
+                <td><input type="checkbox" name="roll199_present"> Present</td>
+                <td><input type="checkbox" name="roll199_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 200 – Zala Bhavyadeepsinh Pruthvirajsi</td>
+                <td><input type="checkbox" name="roll200_present"> Present</td>
+                <td><input type="checkbox" name="roll200_absent"> Absent</td>
+            </tr>
+
+            <tr>
+                <td> 201 – Sinha Milankumar Sujitkumar
+                </td>
+                <td><input type="checkbox" name="roll201_present"> Present</td>
+                <td><input type="checkbox" name="roll201_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 202 – Lakhtaria Kevin Homin
+                </td>
+                <td><input type="checkbox" name="roll202_present"> Present</td>
+                <td><input type="checkbox" name="roll202_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 203 – Motrya Kartavya Bhaveshbhai
+                </td>
+                <td><input type="checkbox" name="roll203_present"> Present</td>
+                <td><input type="checkbox" name="roll203_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 204 – Monpara Nij Hareshbhai
+                </td>
+                <td><input type="checkbox" name="roll204_present"> Present</td>
+                <td><input type="checkbox" name="roll204_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 205 – Divya Thakar
+                </td>
+                <td><input type="checkbox" name="roll205_present"> Present
+                </td>
+                <td><input type="checkbox" name="roll205_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 206 – Mendapara Piyu Amishbhai
+                </td>
+                <td><input type="checkbox" name="roll206_present"> Present</td>
+                <td><input type="checkbox" name="roll206_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 207 – Pandya Karan Tusharbhai
+                </td>
+                <td><input type="checkbox" name="roll207_present"> Present</td>
+                <td><input type="checkbox" name="roll207_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 208 – Raval Meet Mohitkumar
+                </td>
+                <td><input type="checkbox" name="roll208_present"> Present</td>
+                <td><input type="checkbox" name="roll208_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td>209 – Virpariya Heer Manishbhai
+                </td>
+                <td><input type="checkbox" name="roll209_present"> Present</td>
+                <td><input type="checkbox" name="roll209_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 210 – Bhanushatr Hiral Bhaven
+                </td>
+                <td><input type="checkbox" name="roll210_present"> Present</td>
+                <td><input type="checkbox" name="roll210_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 211 – Kamatrya Akashkumar Rameshbhai
+                </td>
+                <td><input type="checkbox" name="roll211_present"> Present</td>
+                <td><input type="checkbox" name="roll211_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 212 – Popat Honey Nileshbhai
+                </td>
+                <td><input type="checkbox" name="roll212_present"> Present</td>
+                <td><input type="checkbox" name="roll212_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 213 – Badrakiya Meet Bharatbhai
+                </td>
+                <td><input type="checkbox" name="roll213_present"> Present</td>
+                <td><input type="checkbox" name="roll213_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 214 – Kanani Kavit Nareshbhai
+                </td>
+                <td><input type="checkbox" name="roll214_present"> Present</td>
+                <td><input type="checkbox" name="roll214_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 215 – Ambatrya Manan Jayeshbhai
+                </td>
+                <td><input type="checkbox" name="roll215_present"> Present</td>
+                <td><input type="checkbox" name="roll215_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 216 – Hinsu Umang Bharatbhai
+                </td>
+                <td><input type="checkbox" name="roll216_present"> Present</td>
+                <td><input type="checkbox" name="roll216_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 217 – Kakaniya Bhavy Niteshbhai
+                </td>
+                <td><input type="checkbox" name="roll217_present"> Present</td>
+                <td><input type="checkbox" name="roll217_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 218 – Padia Kartik Balkrishna
+                </td>
+                <td><input type="checkbox" name="roll218_present"> Present</td>
+                <td><input type="checkbox" name="roll218_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 219 – Mankada Hasan Shabbirhusain
+                </td>
+                <td><input type="checkbox" name="roll219_present"> Present</td>
+                <td><input type="checkbox" name="roll219_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 220 – Mehta Dhairy Kalpeshbhai
+                </td>
+                <td><input type="checkbox" name="roll220_present"> Present</td>
+                <td><input type="checkbox" name="roll220_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 221 – Mehta Het Latrtkumar
+                </td>
+                <td><input type="checkbox" name="roll221_present"> Present</td>
+                <td><input type="checkbox" name="roll221_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 222 – Kahan Sanghani
+                </td>
+                <td><input type="checkbox" name="roll222_present"> Present
+                </td>
+                <td><input type="checkbox" name="roll222_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 223 – Gotani Himesh Sanjaybhai
+                </td>
+                <td><input type="checkbox" name="roll223_present"> Present</td>
+                <td><input type="checkbox" name="roll223_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 224 – Narola Yash Nileshbhai
+                </td>
+                <td><input type="checkbox" name="roll224_present"> Present</td>
+                <td><input type="checkbox" name="roll224_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 225 – Targata Dharmishtha Arjanbhai
+                </td>
+                <td><input type="checkbox" name="roll225_present"> Present</td>
+                <td><input type="checkbox" name="roll225_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 226 – Bhuva Tirth Shaileshbhai
+                </td>
+                <td><input type="checkbox" name="roll226_present"> Present</td>
+                <td><input type="checkbox" name="roll226_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 227 – Jadeja Yashraj Lakhdhirsinh
+                </td>
+                <td><input type="checkbox" name="roll227_present"> Present</td>
+                <td><input type="checkbox" name="roll227_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 228 – Krisha Pujara
+                </td>
+                <td><input type="checkbox" name="roll228_present"> Present
+                </td>
+                <td><input type="checkbox" name="roll228_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 229 – Varsani Ritul Hirji
+                </td>
+                <td><input type="checkbox" name="roll229_present"> Present</td>
+                <td><input type="checkbox" name="roll229_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 230 – Parmar Dhyey Dharmendra
+                </td>
+                <td><input type="checkbox" name="roll230_present"> Present</td>
+                <td><input type="checkbox" name="roll230_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 231 – Shingala Mansi Rajeshbhai
+                </td>
+                <td><input type="checkbox" name="roll231_present"> Present</td>
+                <td><input type="checkbox" name="roll231_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 232 – Dobariya Jeel Upendrabhai
+                </td>
+                <td><input type="checkbox" name="roll232_present"> Present</td>
+                <td><input type="checkbox" name="roll232_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 233 – Khant Mannkumar Jigneshbhai
+                </td>
+                <td><input type="checkbox" name="roll233_present"> Present</td>
+                <td><input type="checkbox" name="roll233_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 234 – Yadav Neel Hiteshbhai
+                </td>
+                <td><input type="checkbox" name="roll234_present"> Present</td>
+                <td><input type="checkbox" name="roll234_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 235 – Andodariya Yash Maheshbhai
+                </td>
+                <td><input type="checkbox" name="roll235_present"> Present</td>
+                <td><input type="checkbox" name="roll235_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 236 – Hirani Jeelkumar Sanjaybhai
+                </td>
+                <td><input type="checkbox" name="roll236_present"> Present</td>
+                <td><input type="checkbox" name="roll236_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 237 – Mankad Shyamsundar Mitbhai
+                </td>
+                <td><input type="checkbox" name="roll237_present"> Present</td>
+                <td><input type="checkbox" name="roll237_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 238 – Agavan Rohan Farukbhai
+                </td>
+                <td><input type="checkbox" name="roll238_present"> Present</td>
+                <td><input type="checkbox" name="roll238_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 239 – Bhadja Zeel Satishkumar
+                </td>
+                <td><input type="checkbox" name="roll239_present"> Present</td>
+                <td><input type="checkbox" name="roll239_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 240 – Shreya Vijaybhai Bhundia
+                </td>
+                <td><input type="checkbox" name="roll240_present"> Present</td>
+                <td><input type="checkbox" name="roll240_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td>
+                    241 – Aghara Keyur Hiteshbhai
+                </td>
+                <td><input type="checkbox" name="roll241_present"> Present</td>
+                <td><input type="checkbox" name="roll241_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td>242 – Buddhadev Deep Nitinbhai
+                </td>
+                <td><input type="checkbox" name="roll242_present"> Present</td>
+                <td><input type="checkbox" name="roll242_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 243 – Godham Meet Maheshbhai
+                </td>
+                <td><input type="checkbox" name="roll243_present"> Present</td>
+                <td><input type="checkbox" name="roll243_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 244 – Katariya Tdisha Ashvinbhai
+                </td>
+                <td><input type="checkbox" name="roll244_present"> Present</td>
+                <td><input type="checkbox" name="roll244_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 245 – Vekariya Jay Bipinbhai
+                </td>
+                <td><input type="checkbox" name="roll245_present"> Present</td>
+                <td><input type="checkbox" name="roll245_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 246 – Rutvi Gautami
+                </td>
+                <td><input type="checkbox" name="roll246_present"> Present
+                </td>
+                <td><input type="checkbox" name="roll246_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 247 – Sankatrya Aryan Ashokbhai
+                </td>
+                <td><input type="checkbox" name="roll247_present"> Present</td>
+                <td><input type="checkbox" name="roll247_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 248 – Ghadiya Yashvi Sanjaybhai
+                </td>
+                <td><input type="checkbox" name="roll248_present"> Present</td>
+                <td><input type="checkbox" name="roll248_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 249 – Ved Chatvani
+                </td>
+                <td><input type="checkbox" name="roll249_present"> Present
+                </td>
+                <td><input type="checkbox" name="roll249_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 250 – Ghorai Swati Sanjib
+                </td>
+                <td><input type="checkbox" name="roll250_present"> Present</td>
+                <td><input type="checkbox" name="roll250_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 251 – Karena Radhika Bharatbhai
+                </td>
+                <td><input type="checkbox" name="roll251_present"> Present</td>
+                <td><input type="checkbox" name="roll251_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 252 – Pandya Kruti Tusharbhai
+                </td>
+                <td><input type="checkbox" name="roll252_present"> Present</td>
+                <td><input type="checkbox" name="roll252_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 253 – Patel Tejkumar Niteshbhai
+                </td>
+                <td><input type="checkbox" name="roll253_present"> Present</td>
+                <td><input type="checkbox" name="roll253_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 254 – Sagpariya Mahee Nitinbhai
+                </td>
+                <td><input type="checkbox" name="roll254_present"> Present</td>
+                <td><input type="checkbox" name="roll254_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 255 – Sherasiya Shyam Sureshbhai
+                </td>
+                <td><input type="checkbox" name="roll255_present"> Present</td>
+                <td><input type="checkbox" name="roll255_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> >256 – Trya Hirvita Rajendra
+                </td>
+                <td><input type="checkbox" name="roll256_present"> Present</td>
+                <td><input type="checkbox" name="roll256_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 257 – Ahir Krishna Manishbhai
+                </td>
+                <td><input type="checkbox" name="roll257_present"> Present</td>
+                <td><input type="checkbox" name="roll257_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 258 – Parmar Devanshu Gopalbhai
+                </td>
+                <td><input type="checkbox" name="roll258_present"> Present</td>
+                <td><input type="checkbox" name="roll258_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 259 – Tivari Astha Sureshbhai
+                </td>
+                <td><input type="checkbox" name="roll259_present"> Present</td>
+                <td><input type="checkbox" name="roll259_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 260 – Pal Kana Odedra
+                </td>
+                <td><input type="checkbox" name="roll260_present"> Present</td>
+                <td><input type="checkbox" name="roll260_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 261 – Sorathiya Nabhag Sanjaybhai
+                </td>
+                <td><input type="checkbox" name="roll261_present"> Present</td>
+                <td><input type="checkbox" name="roll261_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 262 – Chauhan Vishal Girishbhai
+                </td>
+                <td><input type="checkbox" name="roll262_present"> Present</td>
+                <td><input type="checkbox" name="roll262_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 263 – Kuchhadiya Vanita Bhima
+                </td>
+                <td><input type="checkbox" name="roll263_present"> Present</td>
+                <td><input type="checkbox" name="roll263_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 264 – Bhimani Naman Chiragbhai
+                </td>
+                <td><input type="checkbox" name="roll264_present"> Present</td>
+                <td><input type="checkbox" name="roll264_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 265 – Diyora Miraj Bhaveshbhai
+                </td>
+                <td><input type="checkbox" name="roll265_present"> Present</td>
+                <td><input type="checkbox" name="roll265_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 266 – Gajera Rakshit Ketanbhai
+                </td>
+                <td><input type="checkbox" name="roll266_present"> Present</td>
+                <td><input type="checkbox" name="roll266_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 267 – Parmar Darpan Jitendra
+                </td>
+                <td><input type="checkbox" name="roll267_present"> Present</td>
+                <td><input type="checkbox" name="roll267_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 268 – Tdivedi Manan Vijaykumar
+                </td>
+                <td><input type="checkbox" name="roll268_present"> Present</td>
+                <td><input type="checkbox" name="roll268_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 269 – Dave Maharshi Kirtikumar
+                </td>
+                <td><input type="checkbox" name="roll269_present"> Present</td>
+                <td><input type="checkbox" name="roll269_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 270 – Param Rameshbhai Kotadiya
+                </td>
+                <td><input type="checkbox" name="roll270_present"> Present</td>
+                <td><input type="checkbox" name="roll270_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 271 – Patel Archi Pradipbhai
+                </td>
+                <td><input type="checkbox" name="roll271_present"> Present</td>
+                <td><input type="checkbox" name="roll271_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 272 – Saradhara Yug Vrajbhushanbhai
+                </td>
+                <td><input type="checkbox" name="roll272_present"> Present</td>
+                <td><input type="checkbox" name="roll272_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 273 – Padhariya Ruturajsinh Sureshbhai</td>
+                <td><input type="checkbox" name="roll273_present"> Present</td>
+                <td><input type="checkbox" name="roll273_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 274 – Vegad Jenil Ashokbhai
+                </td>
+                <td><input type="checkbox" name="roll274_present"> Present</td>
+                <td><input type="checkbox" name="roll274_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 275 – Patani Kismatbanu Shahidbhai
+                </td>
+                <td><input type="checkbox" name="roll275_present"> Present</td>
+                <td><input type="checkbox" name="roll275_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 276 – Savatrya Jinesh Kantilal
+                </td>
+                <td><input type="checkbox" name="roll276_present"> Present</td>
+                <td><input type="checkbox" name="roll276_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 277 – Tank Darshan Chetanbhai
+                </td>
+                <td><input type="checkbox" name="roll277_present"> Present</td>
+                <td><input type="checkbox" name="roll277_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 278 – Ghodasara Dev Ketanbhai
+                </td>
+                <td><input type="checkbox" name="roll278_present"> Present</td>
+                <td><input type="checkbox" name="roll278_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 279 – Pithadiya Yash Devendrabhai
+                </td>
+                <td><input type="checkbox" name="roll279_present"> Present</td>
+                <td><input type="checkbox" name="roll279_absent"> Absent</td>
+            </tr>
+            <tr>
+                <td> 280 – Gohel Jenil Amitkumar
+                </td>
+                <td><input type="checkbox" name="roll280_present"> Present</td>
+                <td><input type="checkbox" name="roll280_absent"> Absent</td>
+            </tr>
+        </table>
+
+        <div id="totalpresent">
+            <h2>Total Present:<span id="presentCount"></span></h2>
+        </div>
+        <div id="totalabsent">
+            <h2>Total Absent:<span id="absentCount"></span></h2>
+        </div>
+         <button onclick="getAbsentRollNumbers()" align="center">Show Absent Roll Numbers</button>
+    </div>
+    </table>
+    <script>
+// Ensure mutual exclusivity of Present and Absent
+function handleExclusivity() {
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            const name = this.name;
+            let otherBox;
+            if (name.includes('_present')) {
+                otherBox = document.querySelector(`input[name="${name.replace('_present', '_absent')}"]`);
+            } else if (name.includes('_absent')) {
+                otherBox = document.querySelector(`input[name="${name.replace('_absent', '_present')}"]`);
+            }
+            if (this.checked && otherBox) {
+                otherBox.checked = false;
+            }
+        });
+    });
+}
+
+// Mark all students as Present and Absent is unchecked
+function markAllPresent() {
+    document.querySelectorAll('input[name$="_present"]').forEach(presentBox => {
+        presentBox.checked = true;
+        const absentBox = document.querySelector(`input[name="${presentBox.name.replace('_present', '_absent')}"]`);
+        if (absentBox) absentBox.checked = false;
+    });
+    countAttendance();
+}
+
+// Clear all Present and Absent checkboxes
+function clearAll() {
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    countAttendance(); // Reset counts
+}
+
+// Count Present and Absent students
+function countAttendance() {
+    let presentCount = 0, absentCount = 0;
+    document.querySelectorAll('input[name$="_present"]').forEach(presentBox => {
+        if (presentBox.checked) presentCount++;
+    });
+    document.querySelectorAll('input[name$="_absent"]').forEach(absentBox => {
+        if (absentBox.checked) absentCount++;
+    });
+    document.getElementById('presentCount').innerText = presentCount;
+    document.getElementById('absentCount').innerText = absentCount;
+}
+
+//  update status screen
+function updateHoverDisplay(row, status) {
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 3) return;
+
+    const studentInfo = cells[0].textContent.trim();
+    const presentBox = cells[1].querySelector('input[type="checkbox"]');
+    const absentBox = cells[2].querySelector('input[type="checkbox"]');
+
+    if (status === 'present') {
+        presentBox.checked = true;
+        absentBox.checked = false;
+    } else if (status === 'absent') {
+        absentBox.checked = true;
+        presentBox.checked = false;
+    }
+
+    const display = document.getElementById('hoverDisplay');
+    display.innerHTML = `
+        ${studentInfo}<br>
+        <label>
+            <input type="checkbox" ${presentBox.checked ? 'checked' : ''} onclick="toggleAttendance(this)" data-pair="${presentBox.name}"> Present
+        </label>
+        &nbsp;&nbsp;&nbsp;
+        <label>
+            <input type="checkbox" ${absentBox.checked ? 'checked' : ''} onclick="toggleAttendance(this)" data-pair="${absentBox.name}"> Absent
+        </label>
+    `;
+
+    countAttendance();
+}
+
+function toggleAttendance(checkbox) {
+    const targetName = checkbox.getAttribute('data-pair');
+    const targetInput = document.querySelector(`input[name="${targetName}"]`);
+    if (!targetInput) return;
+
+    targetInput.checked = checkbox.checked;
+
+    const otherName = targetName.includes('_present')
+        ? targetName.replace('_present', '_absent')
+        : targetName.replace('_absent', '_present');
+    const otherInput = document.querySelector(`input[name="${otherName}"]`);
+    if (checkbox.checked && otherInput) {
+        otherInput.checked = false;
+    }
+
+    document.querySelectorAll(`#hoverDisplay input`).forEach(inp => {
+        if (inp.getAttribute('data-pair') === otherName) {
+            inp.checked = false;
+        }
+    });
+
+    countAttendance();
+}
+
+// Attach hover and click to each column
+document.addEventListener('DOMContentLoaded', () => {
+    handleExclusivity();
+
+    document.querySelectorAll('table tr').forEach(row => {
+        const tds = row.querySelectorAll('td');
+        if (tds.length < 3) return;
+
+   
+        tds[1].addEventListener('mouseenter', () => updateHoverDisplay(row, 'present'));
+        tds[2].addEventListener('mouseenter', () => updateHoverDisplay(row, 'absent'));
+
+      
+        tds[1].addEventListener('click', () => updateHoverDisplay(row, 'present'));
+        tds[2].addEventListener('click', () => updateHoverDisplay(row, 'absent'));
+
+      
+        tds[1].addEventListener('touchstart', () => updateHoverDisplay(row, 'present'));
+        tds[2].addEventListener('touchstart', () => updateHoverDisplay(row, 'absent'));
+    });
+});
+function getAbsentRollNumbers() {
+    const absentRolls = [];
+    const rows = document.querySelectorAll('table tr');
+    
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length < 3) return;
+
+        const rollInfo = cells[0].textContent.trim();
+        const absentCheckbox = cells[2].querySelector('input[type="checkbox"]');
+        
+        if (absentCheckbox && absentCheckbox.checked) {
+            const rollMatch = rollInfo.match(/\d+/); // Extract roll number
+            if (rollMatch) absentRolls.push(rollMatch[0]);
+        }
+    });
+
+    if (absentRolls.length > 0) {
+        alert("Absent Roll Numbers:\n" + absentRolls.join(", "));
+    } else {
+        alert("No students marked as absent.");
+    }
+}
+
+</script>
+
+   
+  
+</body>
+
+</html>
